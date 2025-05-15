@@ -7,8 +7,24 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import AdaBoostClassifier
+from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
 import os
+
+def adaboost(args):
+    X_train = args["X_train"]
+    y_train = args["y_train"]
+    model = AdaBoostClassifier(random_state=42)
+    model.fit(X_train, y_train)
+    return model
+
+def xgboost(args):
+    X_train = args["X_train"]
+    y_train = args["y_train"]
+    model = XGBClassifier(random_state=42)
+    model.fit(X_train, y_train)
+    return model
 
 def decision_tree(args):
     X_train = args["X_train"]
@@ -150,7 +166,7 @@ def main():
     }
     question_3 = {
         "description": "Predict the status of a crime",
-        "models_list": [knn, random_forest, decision_tree],
+        "models_list": [knn, random_forest, decision_tree, adaboost, xgboost],
         "label": "Status"
     }
     questions_list = [question_1, question_2, question_3]
