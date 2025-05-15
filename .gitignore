@@ -1,0 +1,10 @@
+# Ignore Excel files
+*.xls
+*.xlsx
+*.xlsm
+*.xlsb
+*.xltx
+*.xltm
+
+# Ignore CSV files
+*.csv
