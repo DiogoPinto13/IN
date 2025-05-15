@@ -1,0 +1,13 @@
+Label: severity_code
+Correlated features (|corr| > 0.2):
+- crime_type_code: 0.2260
+- weapon_code: -0.5411
+- crime_type_code2: -0.2073
+- mo_code3: -0.2580
+- mo_code4: -0.3292
+- mo_code5: -0.3399
+- mo_code6: -0.3122
+- mo_code7: -0.2657
+- mo_code8: -0.2148
+- mo_code_count: -0.4932
+- status_code_IC: 0.2681
