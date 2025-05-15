@@ -83,7 +83,6 @@ def main():
         performance_metrics.clear()
 
 if __name__ == "__main__":
-    #df = pd.read_csv("crime_dataset.csv", sep=";")
-    #print(df.head(20))
-    #main()
-    pre_process_dataset("crime_dataset.csv", 1)
+    df = pd.read_csv("crime_dataset.csv", sep=";")
+    print(df.head(20))
+    main()

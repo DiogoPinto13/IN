@@ -79,11 +79,11 @@ def pre_process_dataset(dataset_path, question_index):
     "department_code", 
     "vict_sex", 
     "vict_descent_code",
-    "status_code",
     "occurence_date_weekday",
     "register_date_weekday"
   ])
   df = label_encode_columns(df, [
+    "status_code",
     "structure_code",
     "weapon_code",
     "severity_code"
