@@ -1,11 +1,12 @@
 Label: severity_code
-Correlated features (|corr| > 0.1):
+Correlated features (|corr| > 0.05):
 
 - crime_type_code: 0.2260
 - structure_code: 0.1031
 - weapon_code: -0.5411
 - status_code: 0.2539
 - crime_type_code2: -0.2073
+- days_difference: 0.0578
 - mo_code1: -0.1620
 - mo_code2: -0.1555
 - mo_code3: -0.2580
@@ -17,6 +18,12 @@ Correlated features (|corr| > 0.1):
 - mo_code9: -0.1681
 - mo_code10: -0.1268
 - mo_code_count: -0.4932
+- department_code_8: 0.0605
+- department_code_12: -0.0737
+- department_code_14: 0.0501
+- department_code_18: -0.0623
 - vict_sex_X: 0.1143
+- vict_descent_code_B: -0.0977
 - vict_descent_code_H: -0.1362
+- vict_descent_code_W: 0.0946
 - vict_descent_code_X: 0.1135

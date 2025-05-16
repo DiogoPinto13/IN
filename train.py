@@ -85,4 +85,7 @@ def main():
 if __name__ == "__main__":
     df = pd.read_csv("crime_dataset.csv", sep=";")
     print(df.head(20))
+    # pre_process_dataset("crime_dataset.csv", 0)
+    # pre_process_dataset("crime_dataset.csv", 1)
+    # pre_process_dataset("crime_dataset.csv", 2)
     main()
