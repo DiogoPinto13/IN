@@ -74,7 +74,7 @@ def main():
         df, labels = pre_process_dataset("crime_dataset.csv", i)
         print("Question: " + question["description"])
         for model in question["models_list"]:
-            for i in range(1):
+            for i in range(15):
                 X_train, X_test, y_train, y_test = train_test_split(df, labels, test_size=0.3, random_state=i)
                 args["X_train"] = X_train
                 args["y_train"] = y_train
