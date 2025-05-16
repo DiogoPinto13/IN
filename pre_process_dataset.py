@@ -97,11 +97,14 @@ def pre_process_dataset(dataset_path, question_index):
   ], shared_encoder=True)
 
   # normalize the data
-  scaler = MinMaxScaler()
-  scaler.fit(df)
-  df_normalized = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
+  # scaler = MinMaxScaler()
+  # scaler.fit(df)
+  # df = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
 
   correlated_features = correlation_analysis(df, question_index)
   df = filter_features(df, correlated_features, label)
 
-  return (df_normalized, label)
+  labels = df[label]
+  df.drop(columns=[label], inplace=True)
+
+  return (df, labels)

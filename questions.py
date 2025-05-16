@@ -2,7 +2,7 @@ from models import adaboost, decision_tree, knn, linear_regression, random_fores
 
 question_1 = {
   "description": "Days for reporting a crime",
-  "models_list": [linear_regression, random_forest],
+  "models_list": [linear_regression], # random_forest
   "label": "days_difference"
 }
 question_2 = {

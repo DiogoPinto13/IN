@@ -6,19 +6,20 @@ from sklearn.model_selection import train_test_split
 from pre_process_dataset import pre_process_dataset
 from questions import questions_list
 
-def validation(model, X_test, y_test, question_regression):
+def validation(model_name, model, X_test, y_test, question_regression):
     predictions = model.predict(X_test)
     if question_regression == "days_difference":
         return {
             "mean absolute error": mean_absolute_error(y_test, predictions),
-            "mean squarred error": mean_squared_error(y_test, predictions)
+            "mean squarred error": mean_squared_error(y_test, predictions),
+            "model": model_name
         }
     return {
         "accuracy": accuracy_score(y_test, predictions),
         "precision": precision_score(y_test, predictions, labels=y_test, average="macro"),
         "recall": recall_score(y_test, predictions, labels=y_test, average="macro"),
         "f1_score": f1_score(y_test, predictions, labels=y_test, average="macro"),
-        "model": model.__name__
+        "model": model_name
     }
 
 def save_results(performance_metrics, question, output_dir="results"):
@@ -70,14 +71,14 @@ def main():
     }
         
     for i, question in enumerate(questions_list):
-        df_normalized, labels = pre_process_dataset("crime_dataset.csv", i)
+        df, labels = pre_process_dataset("crime_dataset.csv", i)
         print("Question: " + question["description"])
         for model in question["models_list"]:
             for i in range(1):
-                X_train, X_test, y_train, y_test = train_test_split(df_normalized, labels, test_size=0.3, random_state=i)
+                X_train, X_test, y_train, y_test = train_test_split(df, labels, test_size=0.3, random_state=i)
                 args["X_train"] = X_train
                 args["y_train"] = y_train
-                performance_metrics.append(validation(model(args), X_test, y_test, question["label"]))
+                performance_metrics.append(validation(model.__name__, model(args), X_test, y_test, question["label"]))
 
         save_results(performance_metrics, question)
         performance_metrics.clear()
