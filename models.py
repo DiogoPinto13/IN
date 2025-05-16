@@ -6,7 +6,9 @@ from sklearn.ensemble import AdaBoostClassifier
 from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestRegressor
 
-def random_forest_regressor(X_train, y_train, X_test=None, y_test=None):
+def random_forest_regressor(args):
+    X_train = args["X_train"]
+    y_train = args["y_train"]
     model = RandomForestRegressor(random_state=42)
     model.fit(X_train, y_train)
     return model
