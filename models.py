@@ -4,6 +4,12 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import AdaBoostClassifier
 from xgboost import XGBClassifier
+from sklearn.ensemble import RandomForestRegressor
+
+def random_forest_regressor(X_train, y_train, X_test=None, y_test=None):
+    model = RandomForestRegressor(random_state=42)
+    model.fit(X_train, y_train)
+    return model
 
 def adaboost(args):
     X_train = args["X_train"]
