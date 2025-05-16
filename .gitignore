@@ -7,7 +7,7 @@
 *.xltm
 
 # Ignore CSV files
-*.csv
+crime_dataset.csv
 
 __pycache__/
 env
