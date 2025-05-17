@@ -103,6 +103,9 @@ def pre_process_dataset(dataset_path, question_index):
   # scaler.fit(df)
   # df = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
 
+  if question_index == 1:
+    df = df.drop(columns=["crime_type_code", "crime_type_code2"])
+
   correlated_features = correlation_analysis(df, question_index)
   df = filter_features(df, correlated_features, label)
 
