@@ -55,7 +55,7 @@ def knn(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
     n_neighbors = args["n_neighbors"]
-    model = KNeighborsClassifier(n_neighbors=n_neighbors)
+    model = KNeighborsClassifier(n_neighbors=n_neighbors,)
     model.fit(X_train, y_train)
     return model
 

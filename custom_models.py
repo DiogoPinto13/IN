@@ -60,7 +60,7 @@ class TreesEnsemble():
   def fit(self, X_train, y_train):
     for i in range(self.n_estimators):
       x_sample, _, y_sample, _ = train_test_split(X_train, y_train, test_size=0.7, random_state=i)
-      tree = DecisionTreeClassifier(max_depth=3)
+      tree = DecisionTreeClassifier(max_depth=3, random_state=42)
       tree.fit(x_sample, y_sample)
       self.trees.append(tree)
 
