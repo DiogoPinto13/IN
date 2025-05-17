@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def plot_results_boxplots(results_root="results_bkp2", output_dir="plots"):
+def plot_results_boxplots(results_root="results", output_dir="plots"):
     os.makedirs(output_dir, exist_ok=True)
 
     # Iterate through each question folder (e.g., question1, question2, ...)
