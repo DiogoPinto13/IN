@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import AdaBoostClassifier
-from custom_models import KMeansClassifier
+from custom_models import KMeansClassifier, TreesEnsemble
 from xgboost import XGBClassifier
 from sklearn.ensemble import RandomForestRegressor
 
@@ -60,9 +60,17 @@ def knn(args):
     return model
 
 def kmeans(args):
-  X_train = args["X_train"]
-  y_train = args["y_train"]
-  seed = args["seed"]
-  model = KMeansClassifier(seed)
-  model.fit(X_train, y_train)
-  return model
+    X_train = args["X_train"]
+    y_train = args["y_train"]
+    seed = args["seed"]
+    model = KMeansClassifier(seed)
+    model.fit(X_train, y_train)
+    return model
+
+def ensemble_trees(args):
+    X_train = args["X_train"]
+    y_train = args["y_train"]
+    n_estimators = args["n_estimators"]
+    model = TreesEnsemble(n_estimators)
+    model.fit(X_train, y_train)
+    return model

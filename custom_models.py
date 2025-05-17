@@ -1,7 +1,10 @@
 import csv
 import os
-from sklearn.cluster import KMeans
 import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from scipy.stats import mode
 
 def save_cluster_statistics(cluster_idx, assigned_label, pct_major_label, seed, file_path="results/severity_code/cluster_labels.csv"):
   append = seed != 0 or (seed == 0 and cluster_idx != 0)
@@ -48,3 +51,25 @@ class KMeansClassifier():
     cluster_indexes = self.kmeans.predict(X_test)
     # assign the label of the cluster to each sample
     return self.cluster_labels[cluster_indexes]
+
+class TreesEnsemble():
+  def __init__(self, n_estimators):
+    self.n_estimators = n_estimators
+    self.trees = list()
+
+  def fit(self, X_train, y_train):
+    for i in range(self.n_estimators):
+      x_sample, _, y_sample, _ = train_test_split(X_train, y_train, test_size=0.7, random_state=i)
+      tree = DecisionTreeClassifier(max_depth=3)
+      tree.fit(x_sample, y_sample)
+      self.trees.append(tree)
+
+  def predict(self, X_test):
+    results = list()
+    for tree in self.trees:
+      results.append(tree.predict(X_test))
+
+    results = np.array(results)
+    most_common = mode(results, axis=0)
+    final_predictions = most_common.mode.squeeze()
+    return final_predictions
