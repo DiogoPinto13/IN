@@ -1,0 +1,7 @@
+Label: days_difference
+Correlated features (|corr| > 0.05):
+
+- structure_code: 0.0880
+- weapon_code: -0.0585
+- severity_code: 0.0578
+- mo_code_count: -0.0644

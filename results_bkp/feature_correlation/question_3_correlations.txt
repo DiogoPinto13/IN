@@ -1,0 +1,23 @@
+Label: status_code
+Correlated features (|corr| > 0.05):
+
+- crime_type_code: -0.1358
+- structure_code: -0.0608
+- weapon_code: -0.3006
+- crime_type_code2: -0.1859
+- severity_code: 0.2539
+- mo_code1: -0.1127
+- mo_code2: -0.0961
+- mo_code3: -0.1307
+- mo_code4: -0.1599
+- mo_code5: -0.1628
+- mo_code6: -0.1552
+- mo_code7: -0.1328
+- mo_code8: -0.1099
+- mo_code9: -0.0834
+- mo_code10: -0.0615
+- mo_code_count: -0.2149
+- vict_sex_F: -0.0697
+- vict_sex_M: 0.0506
+- vict_descent_code_H: -0.0880
+- vict_descent_code_W: 0.0574
