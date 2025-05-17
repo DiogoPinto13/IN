@@ -67,7 +67,13 @@ def main():
     performance_metrics = list()
     args = {
         "n_estimators": 13,
-        "n_neighbors": 5
+        "n_neighbors": 5,
+        'fit_intercept': False, 'positive': False,
+        'n_estimators': 7, 'max_depth': 10, 'min_samples_split': 4,
+        'n_estimators': 10, 'max_depth': None, 'min_samples_split': 2,
+        'max_depth': 10, 'min_samples_split': 2,
+        'n_estimators': 5, 'learning_rate': 1.0,
+        'n_estimators': 13, 'learning_rate': 0.01, 'max_depth': 6
     }
         
     for i, question in enumerate(questions_list):
