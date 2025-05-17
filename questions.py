@@ -12,7 +12,7 @@ question_2 = {
 }
 question_3 = {
   "description": "Predict the status of a crime",
-  "models_list": [knn, random_forest, decision_tree, adaboost, xgboost],
+  "models_list": [random_forest, decision_tree, adaboost, xgboost],
   "label": "status_code"
 }
-questions_list = [question_1, question_2, question_3] 
+questions_list = [question_1, question_3] 
