@@ -1,0 +1,26 @@
+=== Question 1: Days for reporting a crime ===
+Model: linear_regression
+Best Score: 16.4353
+Best Params: {'fit_intercept': False, 'positive': False}
+
+Model: random_forest_regressor
+Best Score: 15.6750
+Best Params: {'n_estimators': 7, 'max_depth': 10, 'min_samples_split': 4}
+
+=== Question 3: Predict the status of a crime ===
+Model: random_forest
+Best Score: 0.3002
+Best Params: {'n_estimators': 10, 'max_depth': None, 'min_samples_split': 2}
+
+Model: decision_tree
+Best Score: 0.3044
+Best Params: {'max_depth': None, 'min_samples_split': 2}
+
+Model: adaboost
+Best Score: 0.2449
+Best Params: {'n_estimators': 13, 'learning_rate': 1.5}
+
+Model: xgboost
+Best Score: 0.2618
+Best Params: {'n_estimators': 13, 'learning_rate': 0.01, 'max_depth': 6}
+
