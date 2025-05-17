@@ -81,10 +81,8 @@ def main():
         print("Question: " + question["description"])
         for model in question["models_list"]:
             for seed in range(15):
-                if i == 0:
-                    X_train, X_test, y_train, y_test = train_test_split(df, labels, test_size=0.3, random_state=seed)
-                else:
-                    X_train, X_test, y_train, y_test = train_test_split(df, labels, test_size=0.3, random_state=seed, stratify=labels)
+                labels_stratify = None if i == 0 else labels 
+                X_train, X_test, y_train, y_test = train_test_split(df, labels, test_size=0.3, random_state=seed, stratify=labels_stratify)
                 args["X_train"] = X_train
                 args["y_train"] = y_train
                 args["seed"] = seed
