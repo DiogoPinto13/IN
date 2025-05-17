@@ -66,14 +66,14 @@ def read_results(results_dir="results"):
 def main():
     performance_metrics = list()
     args = {
-        "n_estimators": 13,
-        "n_neighbors": 5,
+        'n_clusters':3,
         'fit_intercept': False, 'positive': False,
-        'n_estimators': 7, 'max_depth': 10, 'min_samples_split': 4,
-        'n_estimators': 10, 'max_depth': None, 'min_samples_split': 2,
-        'max_depth': 10, 'min_samples_split': 2,
-        'n_estimators': 5, 'learning_rate': 1.0,
-        'n_estimators': 13, 'learning_rate': 0.01, 'max_depth': 6
+        'n_estimators_rf_regressor': 7, 'max_depth_rf_regressor': 10, 'min_samples_split_rf_regressor': 4,
+        'n_estimators_rf': 15, 'max_depth_rf': 15, 'min_samples_split_rf': 3,
+        'max_depth_dt': 10, 'min_samples_split_dt': 2,
+        'n_estimators_ada': 5, 'learning_rate_ada': 1.0,
+        'n_estimators_xgboost': 10, 'learning_rate_xgboost': 0.2, 'max_depth_xgboost': 4,
+        'n_estimators_ensemble': 15
     }
         
     for i, question in enumerate(questions_list):
