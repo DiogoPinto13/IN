@@ -71,8 +71,8 @@ def pre_process_dataset(dataset_path, question_index):
   df = pd.read_csv(dataset_path, sep=";")
   print(df)
 
-  if question_index == 2:
-    df = df[df["status_code"] != "IC"]
+  #if question_index == 2:
+    #df = df[df["status_code"] != "IC"]
   df = split_mo_codes(df)
   df = replace_null_values(df, ["weapon_code", "crime_type_code2"], 0, int)
 
