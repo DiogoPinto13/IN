@@ -11,35 +11,37 @@ from sklearn.ensemble import RandomForestRegressor
 def random_forest_regressor(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
-    model = RandomForestRegressor(random_state=42)
+    model = RandomForestRegressor(random_state=42, n_estimators=args["n_estimators"], max_depth=args["max_depth"], min_samples_split=args["min_samples_split"])
     model.fit(X_train, y_train)
     return model
 
 def adaboost(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
-    model = AdaBoostClassifier(random_state=42)
+    model = AdaBoostClassifier(random_state=42, n_estimators=args["n_estimators"], learning_rate=args["learning_rate"])
     model.fit(X_train, y_train)
     return model
 
 def xgboost(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
-    model = XGBClassifier(random_state=42)
+    model = XGBClassifier(random_state=42, n_estimators=args["n_estimators"], learning_rate=args["learning_rate"], max_depth=args["max_depth"])
     model.fit(X_train, y_train)
     return model
 
 def decision_tree(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
-    model = DecisionTreeClassifier(random_state=42)
+    model = DecisionTreeClassifier(random_state=42, max_depth=args["max_depth"],min_samples_split=args["min_samples_split"] )
     model.fit(X_train, y_train)
     return model
 
 def linear_regression(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
-    model = LinearRegression()
+    fit_intercept = args["fit_intercept"]
+    positive = args["positive"]
+    model = LinearRegression(fit_intercept=fit_intercept, positive=positive)
     model.fit(X_train, y_train)
     return model
 
@@ -47,7 +49,9 @@ def random_forest(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
     n_estimators = args["n_estimators"]
-    model = RandomForestClassifier(n_estimators=n_estimators, random_state=42)
+    max_depth = args["max_depth"]
+    min_samples_split = args["min_samples_split"]
+    model = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, min_samples_split=min_samples_split, random_state=42)
     model.fit(X_train, y_train)
     return model
 
@@ -71,6 +75,6 @@ def ensemble_trees(args):
     X_train = args["X_train"]
     y_train = args["y_train"]
     n_estimators = args["n_estimators"]
-    model = TreesEnsemble(n_estimators)
+    model = TreesEnsemble(n_estimators=n_estimators)
     model.fit(X_train, y_train)
     return model
