@@ -9,18 +9,18 @@ Best Params: {'n_estimators': 7, 'max_depth': 10, 'min_samples_split': 4}
 
 === Question 3: Predict the status of a crime ===
 Model: random_forest
-Best Score: 0.3002
-Best Params: {'n_estimators': 10, 'max_depth': None, 'min_samples_split': 2}
+Best Score: 0.6447
+Best Params: {'n_estimators': 15, 'max_depth': 15, 'min_samples_split': 3}
 
 Model: decision_tree
-Best Score: 0.3044
-Best Params: {'max_depth': None, 'min_samples_split': 2}
+Best Score: 0.6411
+Best Params: {'max_depth': 10, 'min_samples_split': 2}
 
 Model: adaboost
-Best Score: 0.2449
-Best Params: {'n_estimators': 13, 'learning_rate': 1.5}
+Best Score: 0.5994
+Best Params: {'n_estimators': 5, 'learning_rate': 1.0}
 
 Model: xgboost
-Best Score: 0.2618
-Best Params: {'n_estimators': 13, 'learning_rate': 0.01, 'max_depth': 6}
+Best Score: 0.6356
+Best Params: {'n_estimators': 10, 'learning_rate': 0.2, 'max_depth': 4}
 

@@ -73,7 +73,7 @@ with open(best_file_path, "w") as f:
                     y_pred = [round(y) for y in y_pred]
                     score = mean_absolute_error(y_test, y_pred)
                 else:
-                    score = f1_score(y_test, y_pred, average='macro')
+                    score = f1_score(y_test, y_pred, labels=y_test, average='macro')
 
                 scores.append(score)
 
