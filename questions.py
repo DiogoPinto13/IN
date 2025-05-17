@@ -1,4 +1,4 @@
-from models import adaboost, decision_tree, knn, linear_regression, random_forest, xgboost, random_forest_regressor
+from models import adaboost, decision_tree, kmeans, knn, linear_regression, random_forest, xgboost, random_forest_regressor
 
 question_1 = {
   "description": "Days for reporting a crime",
@@ -7,7 +7,7 @@ question_1 = {
 }
 question_2 = {
   "description": "Predict the crime severity",
-  "models_list": [knn],
+  "models_list": [kmeans],
   "label": "severity_code"
 }
 question_3 = {

@@ -4,7 +4,7 @@ from pathlib import Path
 
 from questions import questions_list
 
-def correlation_analysis(df, question_index, output_dir="outputs/feature_correlation", save_name="correlation_heatmap.png"):
+def correlation_analysis(df, question_index, output_dir="results/feature_correlation", save_name="correlation_heatmap.png"):
   label = questions_list[question_index]["label"]
   output_path = Path(output_dir)
   output_path.mkdir(parents=True, exist_ok=True)
